@@ -25,7 +25,7 @@
   return `${diffDay}d ${diffHours}h ${diffMin}m ${diffSec}s`;
 };*/
 
-const getDiff = (startDate, endDate) => {
+export const getDiff = (startDate, endDate) => {
   const diff = new Date(new Date(startDate) - new Date(endDate));
   return `${diff.getDate()}d ${diff.getHours()}h ${diff.getMinutes()}m ${
     diff.getSeconds
