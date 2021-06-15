@@ -6,7 +6,7 @@
 //2. віднімаємо значення
 //3. повертаємо строку у потрібному форматі
 
-export const getDiff = (startDate, endDate) => {
+/*const getDiff = (startDate, endDate) => {
   const dayData1 = new Date(startDate).getDate();
   const hoursData1 = new Date(startDate).getHours();
   const minData1 = new Date(startDate).getMinutes();
@@ -23,6 +23,13 @@ export const getDiff = (startDate, endDate) => {
   const diffSec = secData1 - secData2;
 
   return `${diffDay}d ${diffHours}h ${diffMin}m ${diffSec}s`;
+};*/
+
+const getDiff = (startDate, endDate) => {
+  const diff = new Date(new Date(startDate) - new Date(endDate));
+  return `${diff.getDate()}d ${diff.getHours()}h ${diff.getMinutes()}m ${
+    diff.getSeconds
+  }s`;
 };
 
 //test data
@@ -31,9 +38,7 @@ const result = getDiff(
   new Date(2017, 5, 6, 10, 15, 0)
 );
 
-const result2 = getDiff(
-  new Date(),
-  new Date('December, 17, 1995, 03:24:00')
-);
 console.log(result);
+
+const result2 = getDiff(new Date(), new Date('December, 17, 1995, 03:24:00'));
 console.log(result2);
