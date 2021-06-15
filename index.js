@@ -27,13 +27,11 @@
 
 export const getDiff = (startDate, endDate) => {
   const diff = new Date(new Date(startDate) - new Date(endDate));
-  return `${diff.getDate()}d ${diff.getHours()}h ${diff.getMinutes()}m ${
-    diff.getSeconds
-  }s`;
+  return `${diff.getDate()}d ${diff.getHours()}h ${diff.getMinutes()}m ${diff.getSeconds()}s`;
 };
 
 //test data
-/*const result = getDiff(
+const result = getDiff(
   new Date(2021, 8, 1, 13, 12, 0),
   new Date(2017, 5, 6, 10, 15, 0)
 );
@@ -41,4 +39,4 @@ export const getDiff = (startDate, endDate) => {
 console.log(result);
 
 const result2 = getDiff(new Date(), new Date('December, 17, 1995, 03:24:00'));
-console.log(result2);*/
+console.log(result2);
