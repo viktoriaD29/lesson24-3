@@ -4,10 +4,10 @@
 export const getDiff = (startDate, endDate) => {
   const diffInMs = Math.abs(endDate - startDate);
 
-  const resDay = diffInMs / (1000 * 60 * 60 * 24);
-  const resHours = diffInMs / (1000 * 60 * 60);
-  const resMin = diffInMs / (1000 * 60);
-  const resSec = diffInMs / 1000;
+  const resDay = Math.trunc(diffInMs / (1000 * 60 * 60 * 24));
+  const resHours = Math.trunc(diffInMs / (1000 * 60 * 60));
+  const resMin = Math.trunc(diffInMs / (1000 * 60));
+  const resSec = Math.trunc(diffInMs / 1000);
 
   return `${resDay}d ${resHours}h ${resMin}m ${resSec}s`;
 };
