@@ -6,7 +6,7 @@
 //2. віднімаємо значення
 //3. повертаємо строку у потрібному форматі
 
-const getDiff = (startDate, endDate) => {
+export const getDiff = (startDate, endDate) => {
   let one_day = 1000 * 60 * 60 * 24;
   //timi in milisec
   let date1_ms = startDate.getTime();
