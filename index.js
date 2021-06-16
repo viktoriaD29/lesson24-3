@@ -15,15 +15,15 @@ const getDiff = (startDate, endDate) => {
   let difference_ms = date2_ms - date1_ms;
 
   difference_ms = difference_ms / 1000;
-  console.log(difference_ms);
-  let seconds = Math.floor(difference_ms % 60);
+
+  let seconds = Math.abs(Math.floor(difference_ms % 60));
   difference_ms = difference_ms / 60;
-  console.log(difference_ms);
-  let minutes = Math.floor(difference_ms % 60);
+
+  let minutes = Math.abs(Math.floor(difference_ms % 60));
   difference_ms = difference_ms / 60;
-  console.log(difference_ms);
-  let hours = Math.floor(difference_ms % 24);
-  let days = Math.floor(difference_ms / 24);
+
+  let hours = Math.abs(Math.floor(difference_ms % 24));
+  let days = Math.abs(Math.floor(difference_ms / 24));
 
   return `${days}d ${hours}h ${minutes}m ${seconds}s`;
 };
