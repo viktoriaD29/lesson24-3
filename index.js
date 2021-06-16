@@ -2,19 +2,25 @@
 //output: string
 
 export const getDiff = (startDate, endDate) => {
-  const diffInMs = Math.abs(endDate - startDate)
+  const diffInMs = Math.abs(endDate - startDate);
 
-  const resDay = Math.trunc(diffInMs / (1000 * 3600 * 24))
-  const resHours = Math.trunc(diffInMs / (1000 * 60 * 60)) - resDay
-  const resMin = Math.trunc(diffInMs / (1000 * 60)) - resHours
-  const resSec = Math.trunc(diffInMs / 1000) - resMin
+  const second = 1000;
+  const minute = second * 60;
+
+  const hours = minute * 60;
+  const day = hours * 24;
+
+  const resDay = Math.floor(diffInMs / day);
+  const resHours = Math.floor((diffInMs % day) / hours)
+  const resMin = Math.floor((diffInMs % hours) / minute)
+  const resSec = Math.floor((diffInMs % minute) / second)
 
   return `${resDay}d ${resHours}h ${resMin}m ${resSec}s`;
 };
 
 const result = getDiff(
   new Date(2021, 8, 1, 13, 12, 0),
-  new Date(2017, 5, 6, 10, 15, 0)
+  new Date(2021, 5, 6, 10, 15, 0)
 );
 
 console.log(result);
