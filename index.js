@@ -25,10 +25,10 @@
   return `${diffDay}d ${diffHours}h ${diffMin}m ${diffSec}s`;
 };*/
 
-/*const getDiff = (startDate, endDate) => {
-  const diff = new Date(new Date(startDate) - new Date(endDate));
+export const getDiff = (startDate, endDate) => {
+  const diff = new Date(new Date(endDate) - new Date(startDate));
   return `${diff.getDate()}d ${diff.getHours()}h ${diff.getMinutes()}m ${diff.getSeconds()}s`;
-};*/
+};
 
 /*const getDiff = (startDate, endDate) => {
   const diff = new Date(startDate.getTime() - endDate.getTime());
@@ -36,14 +36,15 @@
   return `${diff.getDate()}d ${diff.getHours()}h ${diff.getMinutes()}m ${diff.getSeconds()}s`;
 };*/
 
-export const getDiff = (startDate, endDate) => {
+/*const getDiff = (startDate, endDate) => {
   const a = endDate.getDate() - startDate.getDate();
   const b = endDate.getHours() - startDate.getHours();
   const c = endDate.getMinutes() - startDate.getMinutes();
   const d = endDate.getSeconds() - startDate.getSeconds();
 
   return `${a}d ${b}h ${c}m ${d}s`;
-};
+};*/
+
 
 //test data
 /*const result = getDiff(
